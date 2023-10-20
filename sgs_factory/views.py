@@ -11,11 +11,13 @@ class CityViewSet(ModelViewSet):
 class WorkshopViewSet(ModelViewSet):
     queryset = Workshop.objects.all()
     serializer_class = WorkshopSerializer
+    filterset_fields = ['city']
 
 
 class TeamViewSet(ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
+    filterset_fields = ['shift', 'workshop']
 
 
 class WorkerViewSet(ModelViewSet):
